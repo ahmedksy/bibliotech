@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiblioCollège - Notre Espace Lecture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .book-item {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+            .book-item:hover {
+                transform: translateY(-8px);
+            }
+
+        .hero-bg {
+            background-image: linear-gradient(rgba(30, 58, 138, 0.7), rgba(30, 58, 138, 0.7)), url('https://images.unsplash.com/photo-1541339907198-e08759df9a73?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 flex flex-col min-h-screen font-sans">
+
+    <!-- BARRE DE NAVIGATION -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center">
+                <div class="mr-3">
+                    <img src="college.png" alt="Logo" class="h-12 w-auto rounded-lg object-contain">
+                </div>
+                <h1 class="text-2xl font-black text-gray-800 tracking-tight">
+                    BIBLIO<span class="text-blue-600">Tech</span>
+                </h1>
+            </div>
+
+       
+       
+            <div class="relative w-full md:w-1/2">
+                <input type="text" id="searchInput"
+                       class="w-full pl-12 pr-4 py-3 bg-gray-100 border-transparent rounded-xl focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all"
+                       placeholder="Trouver un livre, un auteur ou un thème...">
+                <i class="fa-solid fa-magnifying-glass absolute left-4 top-4 text-gray-400"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- BANNIÈRE -->
+    <header class="bg-gradient-to-r from-blue-800 to-blue-600 text-white py-20 px-4 text-center shadow-inner">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-lg uppercase tracking-tight italic">
+                Bienvenue
+            </h2>
+            <p class="text-xl text-blue-100 mb-0 opacity-90 font-medium italic">
+                Ton catalogue numérique est ouvert 24h/24 !
+            </p>
+
+            <div class="mt-6 inline-block bg-white/10 backdrop-blur-md border border-white/20 px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
+                <i class="fa-solid fa-star text-yellow-300 mr-2 animate-pulse"></i>
+                Le meilleur : <span class="text-yellow-100 uppercase ml-1">35 kilos d'espoir</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- GRILLE DES LIVRES -->
+    <main class="max-w-7xl mx-auto px-4 py-12 w-full">
+        <div class="flex items-center mb-10">
+            <div class="h-8 w-2 bg-blue-600 rounded-full mr-3"></div>
+            <h3 class="text-2xl font-bold text-gray-800">livres disponibles</h3>
+        </div>
+
+        <div id="bookGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+            <!-- LIVRE 1 (35 kilos d'espoir) -->
+            <div class="book-item bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col border border-gray-100">
+                <div class="relative h-72 bg-gray-100">
+                    <img src="https://m.media-amazon.com/images/I/41ECX6S9EUL._SY445_SX342_ML2_.jpg" alt="35 kilos d'espoir" class="w-full h-full object-contain p-4">
+                    <div class="absolute top-4 left-4 bg-blue-600 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-lg">Coup de coeur</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h4 class="text-2xl font-bold text-gray-900 mb-1 uppercase">35 kilos d'espoir</h4>
+                    <p class="text-blue-600 font-bold mb-4 uppercase text-xs tracking-tighter italic">Anna Gavalda</p>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-8 flex-grow italic">"Je déteste l'école." Grégoire a 13 ans et il préfère inventer des machines.</p>
+                    <div class="flex flex-col gap-3">
+                        <a href="https://drive.google.com/file/d/1T0T2mchcztIILp16qtgyt4gooEpqCv6K/view?usp=drive_link" class="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-bold transition shadow-lg"><i class="fa-solid fa-book-open mr-2"></i> LIRE</a>
+                        <a href="https://drive.google.com/file/d/1T0T2mchcztIILp16qtgyt4gooEpqCv6K/view?usp=drive_link" download class="flex items-center justify-center bg-gray-900 hover:bg-black text-white py-3 rounded-xl font-bold transition shadow-lg"><i class="fa-solid fa-download mr-2"></i> TÉLÉCHARGER</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LIVRE 2 () -->
+            <div class="book-item bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col border border-gray-100">
+                <div class="relative h-72 bg-gray-100">
+                    <img src="https://m.media-amazon.com/images/I/61PMK+YY-QL._SY342_.jpg" alt="Le pecheur et sa femme" class="w-full h-full object-contain p-4">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h4 class="text-2xl font-bold text-gray-900 mb-1 uppercase">Le pecheur et sa femme </h4>
+                    <p class="text-blue-600 font-bold mb-4 uppercase text-xs tracking-tighter italic">Frères Grimm</p>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-8 flex-grow italic">Un pêcheur attrape un poisson magique qui exauce tous les souhaits. Mais sa femme, dévorée par une cupidité sans fin, en demande toujours plus. Un conte célèbre qui montre que vouloir tout posséder finit souvent par tout détruire.</p>
+                    <div class="flex flex-col gap-3">
+                        <a href="https://drive.google.com/file/d/1uR05_hwQJD61QjBBGfdC-oP2ZerLJwMP/view?usp=sharing" class="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-bold transition shadow-lg"><i class="fa-solid fa-book-open mr-2"></i> LIRE</a>
+                        <a href="https://drive.google.com/file/d/1uR05_hwQJD61QjBBGfdC-oP2ZerLJwMP/view?usp=sharing" download class="flex items-center justify-center bg-gray-900 hover:bg-black text-white py-3 rounded-xl font-bold transition shadow-lg"><i class="fa-solid fa-download mr-2"></i> TÉLÉCHARGER</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LIVRES 3 À 10 -->
+            <!-- LIVRE 3 -->
+            <div class="book-item bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col border border-gray-100">
+                <div class="relative h-72 bg-gray-100">
+                    <div class="relative h-72 bg-gray-100">
+     <img src="https://cdn.cultura.com/cdn-cgi/image/width=1280/media/pim/TITELIVE/23_9782075092661_1_75.jpg" alt="L'homme qui plantait des arbres" class="w-full h-full object-contain p-4">
+ </div>" 
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h4 class="text-2xl font-bold text-gray-900 mb-1 uppercase">L'homme qui plantait des arbres</h4>
+                    <p class="text-blue-600 font-bold mb-4 uppercase text-xs tracking-tighter italic">Jean Giono</p>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-8 flex-grow italic">Ce livre montre comment la patience et l'action d'une seule personne peuvent transformer un désert en une forêt magnifique. C'est un message d'espoir très puissant..</p>
+                    <div class="flex flex-col gap-3">
+                        <a href="https://drive.google.com/file/d/1afQyn5daYO1WsUmjF9v0YYdRnBkz81d6/view?usp=sharing" class="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-bold transition"><i class="fa-solid fa-book-open mr-2"></i> LIRE</a>
+                        <a href="https://drive.google.com/file/d/1afQyn5daYO1WsUmjF9v0YYdRnBkz81d6/view?usp=sharing" download class="flex items-center justify-center bg-gray-900 hover:bg-black text-white py-3 rounded-xl font-bold transition"><i class="fa-solid fa-download mr-2"></i> TÉLÉCHARGER</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LIVRE 4 -->
+            <div class="book-item bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col border border-gray-100">
+                <div class="relative h-72 bg-gray-100 flex items-center justify-center"><i class="fa-solid fa-book text-5xl text-gray-200"></i></div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h4 class="text-2xl font-bold text-gray-900 mb-1 uppercase">Titre du Livre 4</h4>
+                    <p class="text-blue-600 font-bold mb-4 uppercase text-xs tracking-tighter italic">Auteur 4</p>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-8 flex-grow italic">Description à remplir pour ce livre.</p>
+                    <div class="flex flex-col gap-3">
+                        <a href="#" class="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-bold transition"><i class="fa-solid fa-book-open mr-2"></i> LIRE</a>
+                        <a href="#" download class="flex items-center justify-center bg-gray-900 hover:bg-black text-white py-3 rounded-xl font-bold transition"><i class="fa-solid fa-download mr-2"></i> TÉLÉCHARGER</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LIVRE 5 -->
+            <div class="book-item bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col border border-gray-100">
+                <div class="relative h-72 bg-gray-100 flex items-center justify-center"><i class="fa-solid fa-book text-5xl text-gray-200"></i></div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h4 class="text-2xl font-bold text-gray-900 mb-1 uppercase">Titre du Livre 5</h4>
+                    <p class="text-blue-600 font-bold mb-4 uppercase text-xs tracking-tighter italic">Auteur 5</p>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-8 flex-grow italic">Description à remplir pour ce livre.</p>
+                    <div class="flex flex-col gap-3">
+                        <a href="#" class="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-bold transition"><i class="fa-solid fa-book-open mr-2"></i> LIRE</a>
+                        <a href="#" download class="flex items-center justify-center bg-gray-900 hover:bg-black text-white py-3 rounded-xl font-bold transition"><i class="fa-solid fa-download mr-2"></i> TÉLÉCHARGER</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LIVRE 6 -->
+            <div class="book-item bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col border border-gray-100">
+                <div class="relative h-72 bg-gray-100 flex items-center justify-center"><i class="fa-solid fa-book text-5xl text-gray-200"></i></div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h4 class="text-2xl font-bold text-gray-900 mb-1 uppercase">Titre du Livre 6</h4>
+                    <p class="text-blue-600 font-bold mb-4 uppercase text-xs tracking-tighter italic">Auteur 6</p>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-8 flex-grow italic">Description à remplir pour ce livre.</p>
+                    <div class="flex flex-col gap-3">
+                        <a href="#" class="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-bold transition"><i class="fa-solid fa-book-open mr-2"></i> LIRE</a>
+                        <a href="#" download class="flex items-center justify-center bg-gray-900 hover:bg-black text-white py-3 rounded-xl font-bold transition"><i class="fa-solid fa-download mr-2"></i> TÉLÉCHARGER</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LIVRE 7 -->
+            <div class="book-item bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col border border-gray-100">
+                <div class="relative h-72 bg-gray-100 flex items-center justify-center"><i class="fa-solid fa-book text-5xl text-gray-200"></i></div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h4 class="text-2xl font-bold text-gray-900 mb-1 uppercase">Titre du Livre 7</h4>
+                    <p class="text-blue-600 font-bold mb-4 uppercase text-xs tracking-tighter italic">Auteur 7</p>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-8 flex-grow italic">Description à remplir pour ce livre.</p>
+                    <div class="flex flex-col gap-3">
+                        <a href="#" class="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-bold transition"><i class="fa-solid fa-book-open mr-2"></i> LIRE</a>
+                        <a href="#" download class="flex items-center justify-center bg-gray-900 hover:bg-black text-white py-3 rounded-xl font-bold transition"><i class="fa-solid fa-download mr-2"></i> TÉLÉCHARGER</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LIVRE 8 -->
+            <div class="book-item bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col border border-gray-100">
+                <div class="relative h-72 bg-gray-100 flex items-center justify-center"><i class="fa-solid fa-book text-5xl text-gray-200"></i></div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h4 class="text-2xl font-bold text-gray-900 mb-1 uppercase">Titre du Livre 8</h4>
+                    <p class="text-blue-600 font-bold mb-4 uppercase text-xs tracking-tighter italic">Auteur 8</p>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-8 flex-grow italic">Description à remplir pour ce livre.</p>
+                    <div class="flex flex-col gap-3">
+                        <a href="#" class="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-bold transition"><i class="fa-solid fa-book-open mr-2"></i> LIRE</a>
+                        <a href="#" download class="flex items-center justify-center bg-gray-900 hover:bg-black text-white py-3 rounded-xl font-bold transition"><i class="fa-solid fa-download mr-2"></i> TÉLÉCHARGER</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LIVRE 9 -->
+            <div class="book-item bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col border border-gray-100">
+                <div class="relative h-72 bg-gray-100 flex items-center justify-center"><i class="fa-solid fa-book text-5xl text-gray-200"></i></div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h4 class="text-2xl font-bold text-gray-900 mb-1 uppercase">Titre du Livre 9</h4>
+                    <p class="text-blue-600 font-bold mb-4 uppercase text-xs tracking-tighter italic">Auteur 9</p>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-8 flex-grow italic">Description à remplir pour ce livre.</p>
+                    <div class="flex flex-col gap-3">
+                        <a href="#" class="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-bold transition"><i class="fa-solid fa-book-open mr-2"></i> LIRE</a>
+                        <a href="#" download class="flex items-center justify-center bg-gray-900 hover:bg-black text-white py-3 rounded-xl font-bold transition"><i class="fa-solid fa-download mr-2"></i> TÉLÉCHARGER</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LIVRE 10 -->
+            <div class="book-item bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col border border-gray-100">
+                <div class="relative h-72 bg-gray-100 flex items-center justify-center"><i class="fa-solid fa-book text-5xl text-gray-200"></i></div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h4 class="text-2xl font-bold text-gray-900 mb-1 uppercase">Titre du Livre 10</h4>
+                    <p class="text-blue-600 font-bold mb-4 uppercase text-xs tracking-tighter italic">Auteur 10</p>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-8 flex-grow italic">Description à remplir pour ce livre.</p>
+                    <div class="flex flex-col gap-3">
+                        <a href="#" class="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-bold transition"><i class="fa-solid fa-book-open mr-2"></i> LIRE</a>
+                        <a href="#" download class="flex items-center justify-center bg-gray-900 hover:bg-black text-white py-3 rounded-xl font-bold transition"><i class="fa-solid fa-download mr-2"></i> TÉLÉCHARGER</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-gray-100 py-10 text-center mt-auto">
+        <p class="text-gray-400 text-sm font-medium uppercase tracking-widest">© 2024 BIBLIOCOLLÈGE - L'AVENTURE CONTINUE</p>
+    </footer>
+
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const bookItems = document.querySelectorAll('.book-item');
+
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            bookItems.forEach(item => {
+                const content = item.innerText.toLowerCase();
+                item.style.display = content.includes(term) ? "flex" : "none";
+            });
+        });
+    </script>
+</body>
+</html>
